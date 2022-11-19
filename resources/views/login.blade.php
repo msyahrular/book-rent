@@ -20,21 +20,29 @@
 
 </head>
 <body>
-   
     
     <div class="main d-flex flex-column justify-content-center align-items-center">
+        @if ($errors->any())
+            <div class="alert alert-danger" style="width: 28rem;">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @if (session('status'))
             <div class="alert alert-danger" role="alert">
                 {{session('status') }}
             </div>
         @endif
         <div class="card">
-            <div class="card-body p-5 " style="width: 28rem; height: 30rem;">
-                <p class="text-center fs-3 fw-semibold">Login</p>
+            <div class="card-body p-5 " style="width: 28rem;">
+                <p class="text-center fs-3 fw-semibold">Sign In</p>
                 <form method="POST" action="">
                     @csrf
                     <div class="mb-3">
-                        <label for="Username" class="form-label">Username</label>
+                        <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" name="username" required>
                         <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
                     </div>
@@ -45,7 +53,7 @@
                     
                         <button type="submit" class="mb-3 btn btn-primary form-control">Login</button>
                     <div class="text-center ">
-                        <a href="register" class="text-decoration-none">Create account</a>
+                        <p>Don't have an account yet? <a href="register" class="text-decoration-none">Create account</a></p>
                     </div>
                 </form>
             </div>
