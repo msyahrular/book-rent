@@ -4,6 +4,65 @@
 
 @section('content')
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quia a ipsam dicta quas non hic illum beatae, veniam molestiae! Veniam dicta sit quos, labore porro facilis repellendus voluptatum exercitationem obcaecati velit nam! Tempore quo sed est iusto nostrum. Ea est beatae eligendi, distinctio ducimus placeat quos minus saepe possimus dolorum perspiciatis, magnam fuga facilis iste eius nesciunt ex quo, in facere nulla. Fugiat veniam similique quae maiores soluta, laudantium dolor cupiditate omnis molestiae vel delectus ipsum officiis possimus voluptate nam magni voluptates obcaecati sint harum minima, libero perspiciatis. Voluptate est aperiam saepe deleniti placeat ut velit tenetur, fugiat suscipit quaerat totam iure odit ipsum necessitatibus nostrum reiciendis recusandae accusantium. Natus adipisci iusto laudantium veniam, recusandae alias quas voluptas tenetur laboriosam aut sint exercitationem repellat voluptatibus accusamus omnis quos incidunt a hic itaque obcaecati corrupti commodi. Incidunt suscipit maxime dicta facere minus tenetur repellendus consequatur autem tempora fugiat, consectetur labore atque, veritatis, eum libero doloremque architecto magnam numquam quibusdam cupiditate. Hic ex, impedit eum repudiandae dolor minima autem deserunt facere. Similique consequatur quas impedit velit culpa ipsum vitae ea odio sit doloribus, sequi magni deleniti nihil beatae expedita quam sunt? Ut, maxime repellendus animi quae voluptate tempora doloremque, corrupti sed corporis, quasi maiores libero asperiores! Fuga ea earum nihil doloremque mollitia reprehenderit deserunt maiores voluptates vitae, facere fugiat, vero veniam. Laborum voluptate ea pariatur blanditiis numquam? Voluptatibus, vitae facere quisquam quibusdam recusandae ipsam culpa alias odit aliquid beatae dignissimos et, tempore perferendis minus aliquam fuga nihil aspernatur dicta eos consequatur amet soluta sed. Nostrum est doloremque dignissimos fugiat distinctio earum aut labore nobis voluptatem, eligendi a quaerat dolorem necessitatibus esse autem. Debitis dicta veritatis, aut eos temporibus numquam ab iure. Cum sed omnis dicta maiores suscipit ex itaque explicabo, sapiente laborum non recusandae nostrum ullam. Saepe molestias quidem, fugiat exercitationem cumque neque. Libero vel esse sint itaque velit earum maiores nobis, corporis, accusamus unde impedit magnam numquam beatae fugiat natus et nam est suscipit harum? Porro, iusto doloremque veniam sequi quas, ea deserunt modi ex nam illo maiores? Laborum eveniet assumenda a repudiandae necessitatibus vitae excepturi adipisci fugit. Dignissimos modi recusandae dolorum! Cum nobis omnis excepturi sed tempora veritatis iusto, ipsa possimus incidunt. Nulla earum recusandae quidem, quaerat repellat architecto! Voluptatem sequi tempora cupiditate commodi hic saepe non facilis excepturi, dolore eveniet ipsa rem error nostrum placeat beatae illo fugit? Ab et earum asperiores eveniet veniam, cupiditate, esse vel iste eum sapiente aperiam quisquam quod quibusdam dolorum mollitia? Saepe fuga voluptatum nostrum, consequatur reiciendis iure, minima libero dolorum vitae ipsa sunt asperiores. Porro corrupti saepe enim in, ut id et iste vero, consequuntur assumenda est deserunt culpa quidem rerum nisi perspiciatis, totam iure commodi odio doloribus. Placeat voluptate totam iste dolorum laudantium, corrupti nulla saepe deleniti fuga cum quisquam neque dolorem delectus amet unde recusandae quia eum quaerat eveniet? Nulla, omnis eius repellendus temporibus neque, inventore architecto sapiente ab odio dicta itaque saepe totam cumque non, adipisci sit maiores. Asperiores eos perferendis praesentium fugiat mollitia quidem eius ut perspiciatis alias.</p>
-    
+<h1>Welcome, {{Auth::user()->username}}</h1>
+
+    <div class="row mt-5">
+        <div class="col-lg-4">
+            <div class="card-data book">
+                <div class="row">
+                    <div class="col-6"><i class="bi bi-journal-bookmark-fill"></i></div>
+                    <div class="col-6 d-flex flex-column justify-content-center align-items-end">
+                        <div class="card-desc">Books</div>
+                        <div class="card-count">{{$book_count}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card-data category">
+                <div class="row">
+                    <div class="col-6"><i class="bi bi-card-list"></i></div>
+                    <div class="col-6 d-flex flex-column justify-content-center align-items-end">
+                        <div class="card-desc">Categories</div>
+                        <div class="card-count">{{$category_count}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card-data user">
+                <div class="row">
+                    <div class="col-6"><i class="bi bi-people-fill"></i></div>
+                    <div class="col-6 d-flex flex-column justify-content-center align-items-end">
+                        <div class="card-desc">Users</div>
+                        <div class="card-count">{{$user_count}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h2>#Rent Log</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>User</th>
+                    <th>Book Tiltle</th>
+                    <th>Rent Date</th>
+                    <th>Return Date</th>
+                    <th>Actual Return Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="7" style="text-align:center">No Data</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 @endsection

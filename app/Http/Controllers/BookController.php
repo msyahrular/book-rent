@@ -8,6 +8,6 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
-        $request->session()->flush();
+        return view('book');
     }
 }

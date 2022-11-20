@@ -8,35 +8,9 @@
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
-
-<style>
-    .main{
-        height: 100vh;
-    }
-    .sidebar{
-        background:  #9ED5C5;
-        color: #eaeaea;
-    }
-
-    .sidebar a{
-        color: #eaeaea;
-        font-style: bold;
-        text-decoration: none;
-        display: block;
-        padding: 20px 10px;
-    }
-
-    .sidebar a:hover{
-        background: #8EC3B0;
-    }
-
-    .content{
-        background: #DEF5E5;
-    }
-    
-</style>
 
 <body>
 
@@ -48,20 +22,33 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
         </nav>
+
         <div class="body-content h-100">
             <div class="row g-0 h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSupportedContent">
                     
                         @if (Auth::user()->role_id == 1)
                             
-                            <a href="dashboard"><strong>Dashboard</strong></a>
-                            <a href="books"><strong>Books</strong></a>
-                            <a href="#"><strong>Categoreis</strong></a>
-                            <a href="#"><strong>Users</strong></a>
-                            <a href="#"><strong>Rent Log</strong></a>
+                            <a href="dashboard" @if (request()->route()->uri == 'dashboard') class="active"
+                                @endif><strong>Dashboard</strong></a>
+
+                            <a href="books" @if (request()->route()->uri == 'books') class="active"
+                                @endif><strong>Books</strong></a>
+
+                            <a href="categories" @if (request()->route()->uri == 'categories') class="active"
+                                @endif><strong>Categories</strong></a>
+
+                            <a href="users" @if (request()->route()->uri == 'users') class="active"
+                                @endif><strong>Users</strong></a>
+
+                            <a href="rent-logs" @if (request()->route()->uri == 'rent-logs') class="active"
+                                @endif><strong>Rent Log</strong></a>
+
                             <a href="logout"><strong>Logout</strong></a>
                         @else
-                            <a href="profile"><strong>Profile</strong> </a>
+                            <a href="profile" @if (request()->route()->uri == 'profile') class="active"
+                                @endif><strong>Profile</strong> </a>
+                                
                             <a href="logout"><strong>Logout</strong></a>
                         @endif
 
@@ -73,7 +60,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- JavaScript Bundle with Popper -->
