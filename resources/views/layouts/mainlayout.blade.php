@@ -35,7 +35,8 @@
                             <a href="books" @if (request()->route()->uri == 'books') class="active"
                                 @endif><strong>Books</strong></a>
 
-                            <a href="categories" @if (request()->route()->uri == 'categories') class="active"
+                            <a href="categories" @if (request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' 
+                                || request()->route()->uri == 'category-delete/{slug}' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}') class="active"
                                 @endif><strong>Categories</strong></a>
 
                             <a href="users" @if (request()->route()->uri == 'users') class="active"
