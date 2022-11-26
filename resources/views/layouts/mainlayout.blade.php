@@ -26,9 +26,8 @@
         <div class="body-content h-100">
             <div class="row g-0 h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSupportedContent">
-                    
-                        @if (Auth::user()->role_id == 1)
-                            
+                    @if (Auth::user())
+                        @if (Auth::user()->role_id == 1)   
                             <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active"
                                 @endif><strong>Dashboard</strong></a>
 
@@ -46,15 +45,21 @@
 
                             <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active"
                                 @endif><strong>Rent Log</strong></a>
+                                
+                            <a href="/" class="fw-bold" @if (request()->route()->uri == '/') class="active"
+                                @endif>Book List</a>
 
                             <a href="/logout"><strong>Logout</strong></a>
                         @else
                             <a href="/profile" @if (request()->route()->uri == 'profile') class="active"
                                 @endif><strong>Profile</strong> </a>
-                                
+                            <a href="/" class="fw-bold" @if (request()->route()->uri == '/') class="active"
+                                @endif>Book List</a>
                             <a href="/logout"><strong>Logout</strong></a>
                         @endif
-
+                    @else
+                        <a href="/login" class="fw-bold">Login</a>
+                    @endif
                 </div>
                 <div class="content p-5 col-lg-10">
                     <div>
