@@ -29,28 +29,29 @@
                     
                         @if (Auth::user()->role_id == 1)
                             
-                            <a href="dashboard" @if (request()->route()->uri == 'dashboard') class="active"
+                            <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active"
                                 @endif><strong>Dashboard</strong></a>
 
-                            <a href="books" @if (request()->route()->uri == 'books') class="active"
+                            <a href="/books" @if (request()->route()->uri == 'books' || request()->route()->uri == 'book-add' 
+                                || request()->route()->uri == 'book-delete/{slug}' || request()->route()->uri == 'book-deleted' || request()->route()->uri == 'book-edit/{slug}') class="active"
                                 @endif><strong>Books</strong></a>
 
-                            <a href="categories" @if (request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' 
+                            <a href="/categories" @if (request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' 
                                 || request()->route()->uri == 'category-delete/{slug}' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}') class="active"
                                 @endif><strong>Categories</strong></a>
 
-                            <a href="users" @if (request()->route()->uri == 'users') class="active"
+                            <a href="/users" @if (request()->route()->uri == 'users') class="active"
                                 @endif><strong>Users</strong></a>
 
-                            <a href="rent-logs" @if (request()->route()->uri == 'rent-logs') class="active"
+                            <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active"
                                 @endif><strong>Rent Log</strong></a>
 
-                            <a href="logout"><strong>Logout</strong></a>
+                            <a href="/logout"><strong>Logout</strong></a>
                         @else
-                            <a href="profile" @if (request()->route()->uri == 'profile') class="active"
+                            <a href="/profile" @if (request()->route()->uri == 'profile') class="active"
                                 @endif><strong>Profile</strong> </a>
                                 
-                            <a href="logout"><strong>Logout</strong></a>
+                            <a href="/logout"><strong>Logout</strong></a>
                         @endif
 
                 </div>
