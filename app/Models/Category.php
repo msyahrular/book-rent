@@ -9,9 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
-    use HasFactory;
-    use Sluggable;
-    use SoftDeletes;
+    use HasFactory, Sluggable, SoftDeletes;
 
     protected $fillable = [
         'name', 'slug'

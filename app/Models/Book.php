@@ -10,9 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Book extends Model
 {
-    use HasFactory;
-    use Sluggable;
-    use SoftDeletes;
+    use HasFactory, Sluggable, SoftDeletes;
 
     protected $fillable = ['book_code', 'title', 'cover', 'slug'];
 

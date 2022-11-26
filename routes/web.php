@@ -60,6 +60,14 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('users', [UserController::class, 'index']);
+    Route::get('registered-user', [UserController::class, 'registeredUser']);
+    Route::get('user-detail/{slug}', [UserController::class, 'show']);
+    Route::get('user-approve/{slug}', [UserController::class, 'approve']);
+    Route::get('user-ban/{slug}', [UserController::class, 'delete']);
+    Route::delete('user-ban/{slug}', [UserController::class, 'destroy']);
+    Route::get('user-banned', [UserController::class, 'bannedUser']);
+    Route::get('user-restore/{slug}', [UserController::class, 'restore']);
+
 
     Route::get('rent-logs', [RentLogController::class, 'index']);
 });

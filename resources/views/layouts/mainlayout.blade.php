@@ -40,7 +40,8 @@
                                 || request()->route()->uri == 'category-delete/{slug}' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}') class="active"
                                 @endif><strong>Categories</strong></a>
 
-                            <a href="/users" @if (request()->route()->uri == 'users') class="active"
+                            <a href="/users" @if (request()->route()->uri == 'users' || request()->route()->uri == 'registered-user' 
+                                || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}' || request()->route()->uri == 'user-banned') class="active"
                                 @endif><strong>Users</strong></a>
 
                             <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active"
