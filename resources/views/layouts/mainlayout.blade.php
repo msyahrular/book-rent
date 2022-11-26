@@ -28,33 +28,17 @@
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSupportedContent">
                     @if (Auth::user())
                         @if (Auth::user()->role_id == 1)   
-                            <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active"
-                                @endif><strong>Dashboard</strong></a>
-
-                            <a href="/books" @if (request()->route()->uri == 'books' || request()->route()->uri == 'book-add' 
-                                || request()->route()->uri == 'book-delete/{slug}' || request()->route()->uri == 'book-deleted' || request()->route()->uri == 'book-edit/{slug}') class="active"
-                                @endif><strong>Books</strong></a>
-
-                            <a href="/categories" @if (request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' 
-                                || request()->route()->uri == 'category-delete/{slug}' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}') class="active"
-                                @endif><strong>Categories</strong></a>
-
-                            <a href="/users" @if (request()->route()->uri == 'users' || request()->route()->uri == 'registered-user' 
-                                || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}' || request()->route()->uri == 'user-banned') class="active"
-                                @endif><strong>Users</strong></a>
-
-                            <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active"
-                                @endif><strong>Rent Log</strong></a>
-                                
-                            <a href="/" class="fw-bold" @if (request()->route()->uri == '/') class="active"
-                                @endif>Book List</a>
-
+                            <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active" @endif><strong>Dashboard</strong></a>
+                            <a href="/books" @if (request()->route()->uri == 'books' || request()->route()->uri == 'book-add' || request()->route()->uri == 'book-delete/{slug}' || request()->route()->uri == 'book-deleted' || request()->route()->uri == 'book-edit/{slug}') class="active" @endif><strong>Books</strong></a>
+                            <a href="/categories" @if (request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-delete/{slug}' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}') class="active" @endif><strong>Categories</strong></a>
+                            <a href="/users" @if (request()->route()->uri == 'users' || request()->route()->uri == 'registered-user' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}' || request()->route()->uri == 'user-banned') class="active"@endif><strong>Users</strong></a>
+                            <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif><strong>Rent Log</strong></a> 
+                            <a href="/" class="fw-bold" @if (request()->route()->uri == '/') class="active" @endif>Book List</a>
+                            <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class="active fw-bold" @endif>Book Rent</a>
                             <a href="/logout"><strong>Logout</strong></a>
                         @else
-                            <a href="/profile" @if (request()->route()->uri == 'profile') class="active"
-                                @endif><strong>Profile</strong> </a>
-                            <a href="/" class="fw-bold" @if (request()->route()->uri == '/') class="active"
-                                @endif>Book List</a>
+                            <a href="/profile" @if (request()->route()->uri == 'profile') class="active" @endif><strong>Profile</strong> </a>
+                            <a href="/" class="fw-bold" @if (request()->route()->uri == '/') class="active" @endif>Book List</a>
                             <a href="/logout"><strong>Logout</strong></a>
                         @endif
                     @else
