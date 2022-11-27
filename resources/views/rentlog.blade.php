@@ -4,6 +4,10 @@
 
 @section('content')
 
-    <h1>Ini Halaman Rent Log</h1>
+    <h1>Rent Log List</h1>
+
+    <div class="mt-5">
+        <x-rent-log-table :rentlog='$rent_logs'/>
+    </div>
 
 @endsection

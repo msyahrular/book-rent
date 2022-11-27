@@ -15,26 +15,33 @@
         
     </div>
     
-    <div class="my-5 w-25">
-        <div class="mb-3">
-            <label for="" class="form-label">Username</label>
-            <input type="text" class="form-control" readonly value="{{$user->username}}">
-        </div>
-
-        <div class="mb-3">
-            <label for="" class="form-label">Phone</label>
-            <input type="text" class="form-control" readonly value="{{$user->phone}}">
-        </div>
-
+    <div class="my-5">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="mb-3">
+                    <label for="" class="form-label">Username</label>
+                    <input type="text" class="form-control" readonly value="{{$user->username}}">
+                </div>
         
-        <div class="mb-3">
-            <label for="" class="form-label">Address</label>
-            <textarea class="form-control" name="" id="" cols="30" rows="7" style="resize: none" readonly>{{$user->address}}</textarea>
-        </div>
-
-        <div class="mb-3">
-            <label for="" class="form-label">Status</label>
-            <input type="text" class="form-control" readonly value="{{$user->status}}">
+                <div class="mb-3">
+                    <label for="" class="form-label">Phone</label>
+                    <input type="text" class="form-control" readonly value="{{$user->phone}}">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="" class="form-label">Address</label>
+                    <textarea class="form-control" name="" id="" cols="30" rows="7" style="resize: none" readonly>{{$user->address}}</textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="" class="form-label">Status</label>
+                    <input type="text" class="form-control" readonly value="{{$user->status}}">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <h2>User's Rent Log</h2>
+                <x-rent-log-table :rentlog='$rent_logs'/>
+            </div>
         </div>
     </div>
 
