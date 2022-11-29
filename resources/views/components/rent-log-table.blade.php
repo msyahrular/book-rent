@@ -8,7 +8,7 @@
                 <th>Book</th>
                 <th>Rent Date</th>
                 <th>Return Data</th>
-                <th>Actual Return Date</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                     <td>{{$item->book->title}}</td>
                     <td>{{$item->rent_date}}</td>
                     <td>{{$item->return_date}}</td>
-                    <td>{{$item->actual_return_date}}</td>
+                    <td>{{$item->actual_return_date == null ? 'Masih dipinjam' : ($item->return_date < $item->actual_return_date ? 'Telat dikembalikan' : 'Dikembalikan tepat waktu')}}</td>
                 </tr>
             @endforeach
         </tbody>
